@@ -4,17 +4,20 @@
 :root{
 	--bg:#f6fbfc;
 	--card:#ffffff;
+	--accent-3:#0bb3d6; /* additional blue shade */
 	--accent:#0a74a8; /* teal/blue medical-tech accent */
+	--accent-2:#0A66C2; /* LinkedIn blue */
 	--muted:#6b7580;
-	--container-width:900px;
+	--container-width:1000px;
+	--highlight:#e6f7fb; /* subtle highlight */
 }
-
+	background:linear-gradient(90deg,var(--accent), var(--accent-2), var(--accent-3));
 /* Basic reset and typography */
 *{box-sizing:border-box}
 body{
 	margin:0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-	background:var(--bg);
+	.hero-svg{width:100%;height:160px;display:block;border-bottom-left-radius:8px;border-bottom-right-radius:8px}
 	color:#1f2933;
 	line-height:1.5;
 }
@@ -46,13 +49,25 @@ body{
 	font-weight:700;color:white;font-size:1.1rem
 }
 
+.hero-wrap{margin-top:14px}
+.hero-img{width:100%;height:160px;object-fit:cover;border-bottom-left-radius:8px;border-bottom-right-radius:8px;display:block}
+
 /* Main content cards */
-.card{background:var(--card);padding:18px;margin:18px 0;border-radius:8px;box-shadow:0 6px 18px rgba(16,24,32,0.06)}
-.card h2{margin:0 0 8px 0;color:var(--accent)}
-.card ul{margin:8px 0 0 20px}
+.card{background:var(--card);padding:18px;margin:18px 0;border-radius:10px;box-shadow:0 8px 22px rgba(16,24,32,0.06)}
+.card h2{margin:0 0 12px 0;color:var(--accent)}
+.card p{margin:6px 0}
+
+.edu-block{padding:8px 0;border-top:1px dashed rgba(0,0,0,0.04)}
+.edu-block:first-of-type{border-top:0;padding-top:0}
+.edu-block h3{margin:0 0 4px 0;color:var(--accent-2);font-size:1rem}
+
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:8px}
+.cert-item{background:var(--highlight);border-radius:8px;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.cert-icon{width:56px;height:56px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:white;font-size:1.4rem}
+.cert-item p{margin:0;text-align:center;font-size:0.95rem;color:#15303a}
 
 /* Footer */
-.site-footer{padding:18px 0;text-align:center;color:var(--muted)}
+.site-footer{padding:20px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(16,24,32,0.04);background:linear-gradient(180deg,transparent, rgba(10,102,194,0.02))}
 .footer-inner{display:flex;align-items:center;justify-content:center;gap:12px}
 
 .linkedin-link{text-decoration:none}
@@ -65,5 +80,9 @@ body{
 	.avatar{width:64px;height:64px}
 	:root{--container-width:92%}
 }
+
+/* Small refinements */
+h1, h2, h3 {font-weight:600}
+h2{letter-spacing:0.2px}
 
 /* Helpful comment: replace the avatar with an <img> tag if you add a real photo */
